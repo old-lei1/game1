@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Survivors - Epic Survival Action Game | Play Online Free</title>
+    <meta name="description" content="Play Monster Survivors online for free! Epic survival action game where you battle endless waves of monsters. No download required - play instantly in your browser.">
+    <meta name="keywords" content="Monster Survivors, survival game, action game, online game, free game, browser game, monster battle">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://monstersurvivo.cc/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Monster Survivors - Epic Survival Action Game">
+    <meta property="og:description" content="Battle endless waves of monsters in this thrilling survival game. Play free online!">
+    <meta property="og:url" content="https://monstersurvivo.cc/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Monster Survivors">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Monster Survivors - Epic Survival Action Game">
+    <meta name="twitter:description" content="Battle endless waves of monsters in this thrilling survival game. Play free online!">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'apple-blue': '#007AFF',
+                        'apple-gray': '#8E8E93',
+                        'apple-light-gray': '#F2F2F7',
+                        'apple-dark': '#1C1C1E',
+                        'apple-green': '#34C759',
+                        'apple-red': '#FF3B30',
+                        'apple-orange': '#FF9500',
+                        'apple-purple': '#AF52DE'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .game-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #007AFF 0%, #AF52DE 100%);
+        }
+        
+        .feature-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating-elements::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(0,122,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 10%;
+            left: 80%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(175,82,222,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: 20%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .game-iframe {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .game-iframe:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent 0%, #007AFF 50%, transparent 100%);
+            height: 2px;
+            width: 100px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .game-iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-apple-light-gray to-white text-apple-dark">
+    <!-- Header -->
+    <header class="relative overflow-hidden">
+        <div class="hero-gradient text-white py-16 md:py-24 floating-elements">
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 pulse-animation">
+                    Monster Survivors
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-8 opacity-90">
+                    Battle endless waves of monsters in this epic survival adventure
+                </p>
+                <button onclick="scrollToGame()" class="bg-white text-apple-blue px-8 py-4 rounded-full font-semibold text-lg hover:bg-apple-light-gray transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Play Now - Free!
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Game Section -->
+    <section id="game-section" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-apple-dark mb-4">Play Monster Survivors Online</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-lg text-apple-gray max-w-2xl mx-auto">
+                    Jump straight into the action! No downloads, no registration required. Just pure gaming excitement in your browser.
+                </p>
+            </div>
+            
+            <div class="game-container p-6 max-w-6xl mx-auto">
+                <iframe 
+                    src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+                    class="w-full h-[500px] md:h-[600px] game-iframe border-0"
+                    allowfullscreen
+                    loading="lazy"
+                    title="Monster Survivors Game">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Features -->
+    <section class="py-16 bg-gradient-to-r from-apple-light-gray to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-apple-dark mb-4">Game Features</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-lg text-apple-gray">Discover what makes Monster Survivors an unforgettable gaming experience</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">⚔️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-apple-dark mb-4">Epic Combat System</h3>
+                    <p class="text-apple-gray">Master devastating attacks and special abilities as you face increasingly challenging monster waves.</p>
+                </div>
+                
+                <div class="feature-card p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-apple-green rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-apple-dark mb-4">Strategic Gameplay</h3>
+                    <p class="text-apple-gray">Plan your survival strategy, upgrade your character, and adapt to evolving monster behaviors.</p>
+                </div>
+                
+                <div class="feature-card p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-apple-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-white text-2xl font-bold">🌟</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-apple-dark mb-4">Endless Adventure</h3>
+                    <p class="text-apple-gray">Every playthrough offers unique challenges with procedurally generated monster encounters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Game -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-apple-dark mb-4">About Monster Survivors</h2>
+                    <div class="section-divider mb-6"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-apple-dark">The Ultimate Survival Challenge</h3>
+                        <p class="text-apple-gray leading-relaxed">
+                            Monster Survivors delivers an intense survival experience where quick reflexes meet strategic thinking. As waves of increasingly powerful monsters approach, you must utilize every tool at your disposal to stay alive and push your limits.
+                        </p>
+                        <p class="text-apple-gray leading-relaxed">
+                            The game features a dynamic progression system that rewards both skillful play and tactical decision-making. Each enemy defeated brings you closer to unlocking new abilities and power-ups that will be essential for surviving the later, more challenging waves.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-apple-blue to-apple-purple p-8 rounded-2xl text-white">
+                        <h3 class="text-2xl font-bold mb-6">Key Highlights</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                Fast-paced action gameplay
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                Multiple character upgrades
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                Diverse monster types
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                Progressive difficulty system
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                                Browser-based, no download needed
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play -->
+    <section class="py-16 bg-apple-light-gray">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-apple-dark mb-4">How to Play Monster Survivors</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-lg text-apple-gray">Master the basics and become a monster-slaying legend</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold text-apple-dark mb-4">🎮 Basic Controls</h3>
+                    <p class="text-apple-gray mb-4">Use your mouse or touch controls to move your character around the battlefield. Your character will automatically attack nearby monsters, so focus on positioning and survival.</p>
+                    <p class="text-apple-gray">Keep moving to avoid monster attacks and collect power-ups that appear on the battlefield to enhance your abilities.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold text-apple-dark mb-4">⚡ Power-Up Strategy</h3>
+                    <p class="text-apple-gray mb-4">As you defeat monsters, you'll gain experience and unlock powerful upgrades. Choose upgrades that complement your playstyle - whether you prefer raw damage, defensive capabilities, or special abilities.</p>
+                    <p class="text-apple-gray">Plan your upgrade path carefully as the monster waves become increasingly challenging.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold text-apple-dark mb-4">🎯 Survival Tips</h3>
+                    <p class="text-apple-gray mb-4">Stay mobile and avoid getting cornered by large groups of monsters. Use the environment to your advantage and always be aware of your surroundings.</p>
+                    <p class="text-apple-gray">Focus on eliminating the most dangerous monsters first, and don't forget to collect the gems and items they drop.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold text-apple-dark mb-4">🏆 Advanced Tactics</h3>
+                    <p class="text-apple-gray mb-4">Learn the attack patterns of different monster types to maximize your survival time. Some monsters are slow but powerful, while others are fast but fragile.</p>
+                    <p class="text-apple-gray">Experiment with different upgrade combinations to discover powerful synergies that can dramatically increase your effectiveness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Play -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-apple-dark mb-4">Why Choose Monster Survivors?</h2>
+                <div class="section-divider mb-6"></div>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-apple-green rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-3xl">🆓</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-apple-dark mb-3">Completely Free</h3>
+                        <p class="text-apple-gray">No hidden costs, no premium subscriptions. Enjoy the full Monster Survivors experience without spending a penny.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-apple-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-3xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-apple-dark mb-3">Instant Play</h3>
+                        <p class="text-apple-gray">No downloads or installations required. Click play and jump straight into the monster-battling action within seconds.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-apple-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-white text-3xl">📱</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-apple-dark mb-3">Cross-Platform</h3>
+                        <p class="text-apple-gray">Play seamlessly on desktop, tablet, or mobile. Your monster-slaying adventure adapts to any device you choose.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-apple-blue to-apple-purple p-8 rounded-2xl text-white text-center">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Survive the Monster Apocalypse?</h3>
+                    <p class="text-lg mb-6 opacity-90">Join thousands of players who have already discovered the thrill of Monster Survivors. Test your skills, push your limits, and see how long you can survive against the endless monster hordes.</p>
+                    <button onclick="scrollToGame()" class="bg-white text-apple-blue px-8 py-4 rounded-full font-semibold text-lg hover:bg-apple-light-gray transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Survival Journey
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-apple-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Monster Survivors</h3>
+                <p class="text-apple-gray mb-6">The ultimate browser-based survival game experience</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#game-section" class="text-apple-gray hover:text-white transition-colors">Play Game</a>
+                    <a href="#" class="text-apple-gray hover:text-white transition-colors">Game Guide</a>
+                    <a href="#" class="text-apple-gray hover:text-white transition-colors">Tips & Tricks</a>
+                </div>
+                <div class="border-t border-apple-gray pt-6">
+                    <p class="text-apple-gray text-sm">© 2025 Monster Survivors. All rights reserved. | Best survival game experience online</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToGame() {
+            document.getElementById('game-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        // Lazy loading optimization
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.querySelector('.game-iframe');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        iframe.src = iframe.src; // Trigger load
+                        observer.unobserve(iframe);
+                    }
+                });
+            });
+            observer.observe(iframe);
+        });
+
+        // Performance optimization
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
